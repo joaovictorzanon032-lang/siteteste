@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área Privada ❤️</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-family:Arial, sans-serif;
+      background:linear-gradient(135deg,#ff4d6d,#c9184a);
+      overflow:hidden;
+    }
+
+    .login{
+      background:white;
+      padding:40px;
+      border-radius:25px;
+      text-align:center;
+      width:320px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.2);
+      animation:fade 1s ease;
+    }
+
+    @keyframes fade{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    h1{
+      color:#c9184a;
+      margin-bottom:10px;
+      font-size:32px;
+    }
+
+    .heart{
+      font-size:40px;
+      animation:pulse 1s infinite;
+      margin-bottom:15px;
+    }
+
+    @keyframes pulse{
+      0%{
+        transform:scale(1);
+      }
+
+      50%{
+        transform:scale(1.2);
+      }
+
+      100%{
+        transform:scale(1);
+      }
+    }
+
+    p{
+      color:#666;
+      margin-bottom:20px;
+    }
+
+    input{
+      width:100%;
+      padding:14px;
+      margin-bottom:15px;
+      border:2px solid #ddd;
+      border-radius:12px;
+      font-size:16px;
+      outline:none;
+      transition:0.3s;
+    }
+
+    input:focus{
+      border-color:#ff4d6d;
+    }
+
+    button{
+      width:100%;
+      padding:14px;
+      border:none;
+      border-radius:12px;
+      background:#c9184a;
+      color:white;
+      font-size:16px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:#a4133c;
+      transform:scale(1.03);
+    }
+
+    .erro{
+      color:red;
+      margin-top:10px;
+      display:none;
+      font-size:14px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="login">
+
+    <div class="heart">❤️</div>
+
+    <h1>Bem-vinda</h1>
+
+    <p>Digite a senha para entrar</p>
+
+    <input
+      type="password"
+      id="senha"
+      placeholder="Dica: Início do namoro"
+    >
+
+    <button onclick="entrar()">
+      Entrar
+    </button>
+
+    <div class="erro" id="erro">
+      Senha incorreta 💔
+    </div>
+
+  </div>
+
+  <script>
+
+    function entrar(){
+
+      let senha = document.getElementById("senha").value;
+
+      if(senha === "13082022"){
+
+        window.location.href = "home.html";
+
+      } else {
+
+        document.getElementById("erro").style.display = "block";
+
+      }
+
+    }
+
+    // Apertar Enter para entrar
+
+    document
+      .getElementById("senha")
+      .addEventListener("keypress", function(event){
+
+        if(event.key === "Enter"){
+
+          entrar();
+
+        }
+
+      });
+
+  </script>
+
+</body>
+</html>
