@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosso Espaço ❤️</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:Arial, sans-serif;
+      background:linear-gradient(135deg,#ff4d6d,#c9184a);
+      color:white;
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+
+    /* ANIMAÇÃO */
+
+    @keyframes fade{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* TOPO */
+
+    header{
+      text-align:center;
+      padding:60px 20px;
+      animation:fade 1s ease;
+    }
+
+    header h1{
+      font-size:50px;
+      margin-bottom:15px;
+    }
+
+    header p{
+      font-size:20px;
+      opacity:0.95;
+    }
+
+    /* SEÇÕES */
+
+    section{
+      background:white;
+      color:#333;
+      margin:25px;
+      padding:35px;
+      border-radius:25px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.2);
+      animation:fade 1s ease;
+    }
+
+    section h2{
+      color:#c9184a;
+      margin-bottom:20px;
+      font-size:32px;
+    }
+
+    section p{
+      line-height:1.8;
+      font-size:17px;
+    }
+
+    /* GALERIA */
+
+    .galeria{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-top:25px;
+    }
+
+    .galeria img{
+      width:250px;
+      border-radius:20px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.2);
+      transition:0.4s;
+    }
+
+    .galeria img:hover{
+      transform:scale(1.07) rotate(1deg);
+    }
+
+    /* PLAYLIST */
+
+    iframe{
+      margin-top:20px;
+    }
+
+    /* CONTADOR */
+
+    .contador{
+      text-align:center;
+      font-size:22px;
+      margin-top:20px;
+      color:#c9184a;
+      font-weight:bold;
+    }
+
+    /* RODAPÉ */
+
+    footer{
+      text-align:center;
+      padding:30px;
+      font-size:20px;
+    }
+
+    /* RESPONSIVO */
+
+    @media(max-width:700px){
+
+      header h1{
+        font-size:35px;
+      }
+
+      section{
+        margin:15px;
+        padding:25px;
+      }
+
+      .galeria img{
+        width:100%;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- TOPO -->
+
+  <header>
+
+    <h1>❤️ Bem-vinda ao Nosso Espaço ❤️</h1>
+
+    <p>
+      Um cantinho especial só nosso com coisinhas nossas
+    </p>
+
+  </header>
+
+  <!-- HISTÓRIA -->
+
+  <section>
+
+    <h2>Declaração</h2>
+
+    <p>
+      Nos conhecemos em 2022 e nunca imaginei que depois disso viveria os melhores dias e os melhores momentos ao lado da melhor pessoa que já conheci. Ao seu lado aprendi a amar, cuidar, crescer, viver e agradecer, principalmente por todos os momentos ao seu lado. Obrigado por ser a melhor namorada do mundo, a melhor companheira e minha melhor amiga em todos os momentos, eu te amo muito❤️
+    </p>
+
+    <div class="contador" id="contador"></div>
+
+  </section>
+
+  <!-- FOTOS -->
+
+  <section>
+
+    <h2>📸 Nossas Fotos</h2>
+
+    <div class="galeria">
+
+      <img src="WhatsApp Image 2026-05-14 at 21.35.12" alt="Foto 1">
+      <img src="WhatsApp Image 2026-05-14 at 21.21.29" alt="Foto 2">
+      <img src="WhatsApp Image 2026-05-14 at 20.47.11" alt="Foto 3">
+
+    </div>
+
+  </section>
+
+  <!-- PLAYLIST -->
+
+  <section>
+
+    <h2> Nossa Playlist❤️</h2>
+
+
+    <iframe style="border-radius:12px"
+      src="https://open.spotify.com/embed/playlist/59fydwUGFCeado9Y9MIEpf"
+      width="100%"
+      height="352"
+      frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy">
+    </iframe>
+
+  </section>
+
+  <!-- RODAPÉ -->
+
+  <footer>
+
+    Feito especialmente para você que tanto amo ❤️
+
+  </footer>
+
+  <script>
+
+    // DATA DO NAMORO
+
+    const inicio = new Date(2022, 7, 13);
+
+    const hoje = new Date();
+
+    const diferenca = hoje - inicio;
+
+    const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+
+    document.getElementById("contador").innerHTML =
+      " Estamos juntos há " + dias + " dias ";
+
+  </script>
+
+</body>
+</html>
